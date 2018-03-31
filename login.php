@@ -19,6 +19,7 @@
          Password: <input type="password" name="password" /><br/>
          <input type="submit" />
          </form></center><br/><br/>
+         <a href="user.php">Continue to site as a guest</a>
       
       </table>
    </body>

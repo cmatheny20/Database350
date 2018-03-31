@@ -42,6 +42,9 @@
 				}
 				else
 				{
+					$string = 'python addmongo.py ' . $uname;
+					$add_command = escapeshellcmd($string);
+					$add = shell_exec($add_command);
 					header("Location:admin.php");
 				}
 				

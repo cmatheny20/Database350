@@ -50,6 +50,19 @@ $row = mysqli_fetch_array($qry);
 
 <div class="w3-container">
 <h2>Welcome to the admin page</h2>
+<br>
+<p>All employee logins with their name and the date: </p>
+<br>
+<?php 
+
+$show_command = escapeshellcmd('python showmongo.py');
+$show = shell_exec($show_command);
+echo $show;
+?>
+<form action="deletemongo.php">
+	<button type='submit' name='Delete'>Delete Data</button>
+</form>
+
 
 </div>
 
