@@ -40,6 +40,8 @@ $row = mysqli_fetch_array($qry);
   <a href="#" class="w3-bar-item w3-button">Orders</a>
   <a href="shoes.php" class="w3-bar-item w3-button">Shoes</a>
   <a href="employees.php" class="w3-bar-item w3-button">Employees</a>
+  <a href="reviews.php" class="w3-bar-item w3-button">Reviews</a>
+  <a href="dbManage.php" class="w3-bar-item w3-button">Database Management</a>
 </div>
 
 <!-- Page Content -->

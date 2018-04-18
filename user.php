@@ -75,6 +75,35 @@
   	</select><br>
 	<button type='submit' >Buy Adidas</button>
 </form>
+<br>
+<h2>Leave a review</h2> 
 
+<form action="/review.php" method="POST">
+  Your name:<br>
+  <input type="text" name="name" placeholder="Enter Your Name">
+  <br>
+  Email:<br>
+  <input type="text" name="email" placeholder="Enter Your Email">
+  <br>
+  Shoe:<br>
+  <input type="text" name="shoe" placeholder="Enter Shoe to Review">
+  <br>
+  Review:<br>
+  <textarea name="review" rows="5" cols="40" placeholder="Enter Review"></textarea>
+  <br>
+  Stars:<select name="stars">
+    	<option value="0">0</option>
+    	<option value="1">1</option>
+    	<option value="2">2</option>
+    	<option value="3">3</option>
+    	<option value="4">4</option>
+    	<option value="5">5</option>
+  	</select><br>
+  	<br>
+  	<br>
+  <button type="submit" name="submit">Submit</button>
+</form> 
+<br>
+<br>
 </body>
 </html>

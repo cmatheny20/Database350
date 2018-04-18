@@ -28,6 +28,7 @@ $row = mysqli_fetch_array($qry);
 
 <html>
 <title>W3.CSS</title>
+<?php include_once 'config.php'; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
@@ -40,34 +41,92 @@ $row = mysqli_fetch_array($qry);
   <a href="shoes.php" class="w3-bar-item w3-button">Shoes</a>
   <a href="employees.php" class="w3-bar-item w3-button">Employees</a>
   <a href="reviews.php" class="w3-bar-item w3-button">Reviews</a>
-  <a href="dbManage.php" class="w3-bar-item w3-button">Database Management</a>
+  <a href="#" class="w3-bar-item w3-button">Database Management</a>
 </div>
+
 <!-- Page Content -->
 <div style="margin-left:20%">
 
 <div class="w3-container w3-teal">
   <h1>Death By Shoes</h1>
 </div>
-
-
 <div class="w3-container">
-<h2>Welcome to the admin page</h2>
+<h2>Database Management</h2>
 <br>
-<p>All employee logins with their name and the date: </p>
-<br>
-<?php 
-
-$show_command = escapeshellcmd('python showmongo.py');
-$show = shell_exec($show_command);
-echo $show;
-?>
-<form action="deletemongo.php">
-	<button type='submit' name='Delete'>Delete Data</button>
+<h3>Backup Database</h3>
+<form action="backupdb.php" method="post">
+  <button type='submit' name='backup'>Backup Database</button>
 </form>
+<br>
+<h3>Mongo DB Status</h3>
+<?php
+   $old_path = getcwd();
+   chdir('/var/www/html/');
+   $bashit = shell_exec('./mongostatus.sh');
+   chdir($old_path);
+ 
 
+   echo $bashit;
 
-</div>
+?>
+<h3>Mongo DB Log</h3>
+<?php
+   $old_path = getcwd();
+   chdir('/var/www/html/');
+   $bashit = shell_exec('./mongolog.sh');
+   chdir($old_path);
+ 
 
+   echo $bashit;
+
+?>
+<br>
+<h3>MySQL DB Status</h3>
+<?php
+   $old_path = getcwd();
+   chdir('/var/www/html/');
+   $bashit = shell_exec('./mysqlstatus.sh');
+   chdir($old_path);
+ 
+
+   echo $bashit;
+
+?>
+<h3>MySQL DB Log</h3>
+<?php
+   $old_path = getcwd();
+   chdir('/var/www/html/');
+   $bashit = shell_exec('./mysqllog.sh');
+   chdir($old_path);
+ 
+
+   echo $bashit;
+
+?>
+<br>
+<h3>ElasticSearch Status</h3>
+<?php
+   $old_path = getcwd();
+   chdir('/var/www/html/');
+   $bashit = shell_exec('./elasticsearchstatus.sh');
+   chdir($old_path);
+ 
+
+   echo $bashit;
+
+?>
+<h3>ElasticSearch Log</h3>
+<?php
+   $old_path = getcwd();
+   chdir('/var/www/html/');
+   $bashit = shell_exec('./elasticsearchlog.sh');
+   chdir($old_path);
+ 
+
+   echo $bashit;
+
+?>
+<br><br>
 </div>
       
 </body>
